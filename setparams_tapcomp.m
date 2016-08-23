@@ -5,12 +5,13 @@ Params.stim.list = 'tapcompsamp_fnames.txt';
 Params.stim.folder = 'C:\Users\mille\OneDrive\Documents\Research\Meter_Models\tapcomp_BTB\midi_versions';
 
 %% Mixture Model Parameters
-Params.mix.kappa = [1 2];
-Params.mix.mix = [0.25 0.5 0.75];
+Params.mix.kappa = [0.25 0.5 1 2 3 4];
+Params.mix.mix = 0.125:0.125:1;
 
 %% Target Motor Pattern Settings
 %Must create a 'rhythmClass' for each patter of targets;
 Params.target.rcNames = {'23', '32'};
+Params.target.rcPrettyNames = {'SSL', 'LSS'};
 %'SSL' rhythmClass
 Params.target.rhythmClass{1}.name = Params.target.rcNames{1};
 Params.target.rhythmClass{1}.targets = [0 0.5 1.0]; %Target taps in s
@@ -63,3 +64,10 @@ Params.grfnn_model.mfLayer = [1:2];
 
 %% Simulation Settings
 Params.simNo = 30000; %Mean of VM is determined by simulation -- # of points to generate
+
+%% Plot Settings
+Params.plot.layers = [2];
+Params.plot.rhythmClasses = [1 2];
+Params.plot.pointFlip = 0.2; %seconds from end of measure length to "flip" plotted points
+Params.plot.steadyK = 4; %Value of kappa when kappa is held constant in plot
+Params.plot.steadyM = 2; %Value of mixing paramater when it is held constant in plot

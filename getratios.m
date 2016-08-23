@@ -1,6 +1,8 @@
 function Stims = getratios(Stims, Params)
 
 for stimNo = 1:length(Stims.names)
+    disp(['Calculate inter-tap interval ratios for ' Stims.names{stimNo}]);
+    
     %Identify rhythmClass for stimulus
     rc = Stims.names{stimNo}(1:2);
     rcNo = find(strcmp(Params.target.rcNames, rc));

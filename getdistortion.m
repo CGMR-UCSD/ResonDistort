@@ -17,6 +17,9 @@ end
 
 
 for stimNo = 1:length(Stims.names)
+    disp(['Calculate tap prediction and distortion for ' Stims.names{stimNo}]);
+    disp([num2str(stimNo) '/' num2str(length(Stims.names))])
+
     %Identify rhythmClass for stimulus
     rc = Stims.names{stimNo}(1:2);
     rcNo = find(strcmp(Params.target.rcNames, rc));

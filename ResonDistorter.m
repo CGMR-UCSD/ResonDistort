@@ -35,6 +35,6 @@ Stims = getratios(Stims, Params);
 save('RD_temp');
 
 %% Plot Distortion
-plotdistortion(targets, Params);
+plotdistortion(Stims, Params);
 
 

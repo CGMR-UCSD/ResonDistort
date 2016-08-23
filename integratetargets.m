@@ -3,6 +3,8 @@ function Stims = integratetargets(Stims, Params)
 
 
 for stimNo = 1:length(Stims.names)
+    disp(['Integrating target and reson distributions for ' Stims.names{stimNo}]);
+
     %Identify rhythmClass for stimulus
     rc = Stims.names{stimNo}(1:2);
     rcNo = find(strcmp(Params.target.rcNames, rc));

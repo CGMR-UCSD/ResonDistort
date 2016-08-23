@@ -35,6 +35,7 @@ end
 
 %% Run through each stimulus
 for stimNo = 1:length(Stims.names)
+    
     %Create s stimulus structure
     stimFName = Stims.names(stimNo);
     addpath(Params.stim.folder);

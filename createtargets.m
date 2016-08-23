@@ -1,6 +1,7 @@
 function Params = createtargets(Params)
 %Calculate the motor target distributions (ie. 'tap distros')
 
+
 %% Setup timing vectors
 d = Params.stim.measureLength * Params.grfnn_model.fs;
 if mod(d, 1)
@@ -13,11 +14,12 @@ theta = theta(1:end-1);
 
 %% Calculate distributions for all rhythmClasses
 for rcNo = 1:length(Params.target.rhythmClass)
-    
+    disp(['Setting up motor target distributions for ' Params.target.rcPrettyNames{rcNo}]);
+
     %Create dist for each tap/beat target in pattern
     for bNo = 1:length(Params.target.rhythmClass{rcNo}.targets)
         targetTs = Params.target.rhythmClass{rcNo}.targets(bNo); %Target times, seconds
-        targetTr = (targetTs / Params.stim.measureLength) * 2 * pi %Target times, radians
+        targetTr = (targetTs / Params.stim.measureLength) * 2 * pi; %Target times, radians
         
         %For each kappa (Peakiness), create distribution
         for K = 1:length(Params.mix.kappa)
