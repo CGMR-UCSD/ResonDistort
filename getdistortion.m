@@ -11,8 +11,9 @@ end
 theta = 0:2*pi/d:2*pi; %Radian Measure
 theta = theta(1:end-1);
 
-
-
+if ~isfield(Params, 'simNo')
+    Params.simNo = 30000;
+end
 
 
 for stimNo = 1:length(Stims.names)

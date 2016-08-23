@@ -26,8 +26,15 @@ save('RD_temp');
 Stims = integratetargets(Stims, Params);
 save('RD_temp');
 
-%% Calculate distortion means
+%% Calculate mixture means
 Stims = getdistortion(Stims, Params);
+save('RD_temp');
 
-%% Plot outcomes
+%% Calculate Ratios between mixture means
+Stims = getratios(Stims, Params);
+save('RD_temp');
+
+%% Plot Distortion
 plotdistortion(targets, Params);
+
+

@@ -14,10 +14,12 @@ Params.target.rcNames = {'23', '32'};
 %'SSL' rhythmClass
 Params.target.rhythmClass{1}.name = Params.target.rcNames{1};
 Params.target.rhythmClass{1}.targets = [0 0.5 1.0]; %Target taps in s
+Params.target.rhythmClass{1}.interestratios = {[3 1], [3 2]}; %The ratios that we are interested in to plot
 
 %'LSS' rhythmClass
 Params.target.rhythmClass{2}.name = Params.target.rcNames{2};
 Params.target.rhythmClass{2}.targets = [0 0.75 1.25];
+Params.target.rhythmClass{2}.interestratios = {[1 2], [1 3]};
 
 
 
