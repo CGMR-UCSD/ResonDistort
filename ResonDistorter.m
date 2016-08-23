@@ -24,9 +24,10 @@ save('RD_temp');
 
 %% Integrate Targets and motor mean fields
 Stims = integratetargets(Stims, Params);
+save('RD_temp');
 
-%% Calculate distortion stats
-Stims = getdistortion(Stims, targets, Params);
+%% Calculate distortion means
+Stims = getdistortion(Stims, Params);
 
 %% Plot outcomes
 plotdistortion(targets, Params);

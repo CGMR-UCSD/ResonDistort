@@ -10,12 +10,13 @@ Params.mix.mix = [0.5];
 
 %% Target Motor Pattern Settings
 %Must create a 'rhythmClass' for each patter of targets;
+Params.target.rcNames = {'23', '32'};
 %'SSL' rhythmClass
-Params.target.rhythmClass{1}.name = '23';
+Params.target.rhythmClass{1}.name = Params.target.rcNames{1};
 Params.target.rhythmClass{1}.targets = [0 0.5 1.0]; %Target taps in s
 
 %'LSS' rhythmClass
-Params.target.rhythmClass{2}.name = '32';
+Params.target.rhythmClass{2}.name = Params.target.rcNames{2};
 Params.target.rhythmClass{2}.targets = [0 0.75 1.25];
 
 
@@ -32,29 +33,29 @@ Params.stim.initDelay = 3; %Amount of 'predelay' before audio begins in frames
 Params.stim.measureLength = 1.75; %Length of one measure to average in s
 Params.stim.norm = 1; %Normalize averaged bins as distribution summing to 1.0
 
-%% Model 
-    Params.grfnn_model.fs = 48;
-    Params.grfnn_model.alpha1 =  1e-5;
-    Params.grfnn_model.beta11 =  0;
-    Params.grfnn_model.beta12 = -2;
-    Params.grfnn_model.delta11 =  0;
-    Params.grfnn_model.delta12 = 0;
-    Params.grfnn_model.neps1 = 1;
-    Params.grfnn_model.alpha2 =  -0.4;
-    Params.grfnn_model.beta21 = 1.75;
-    Params.grfnn_model.beta22 =-1.25;
-    Params.grfnn_model.delta21 = 0;
-    Params.grfnn_model.delta22 = 0;
-    Params.grfnn_model.neps2 = 1;
-    Params.grfnn_model.w = 0.4;
-    Params.grfnn_model.lambda =  -1;
-    Params.grfnn_model.mu1 = 4;
-    Params.grfnn_model.mu2 = -2.2;
-    Params.grfnn_model.ceps = 1;
-    Params.grfnn_model.kappa = 1; % Critical
-    Params.grfnn_model.ampMult = 0.05;
-    Params.grfnn_model.makeModel = 'makeRhythm2c3BD';
-    
-    Params.grfnn_model.mfLayer = [1:2];
+%% Model Settings (Same as default)
+Params.grfnn_model.fs = 48;
+Params.grfnn_model.alpha1 =  1e-5;
+Params.grfnn_model.beta11 =  0;
+Params.grfnn_model.beta12 = -2;
+Params.grfnn_model.delta11 =  0;
+Params.grfnn_model.delta12 = 0;
+Params.grfnn_model.neps1 = 1;
+Params.grfnn_model.alpha2 =  -0.4;
+Params.grfnn_model.beta21 = 1.75;
+Params.grfnn_model.beta22 =-1.25;
+Params.grfnn_model.delta21 = 0;
+Params.grfnn_model.delta22 = 0;
+Params.grfnn_model.neps2 = 1;
+Params.grfnn_model.w = 0.4;
+Params.grfnn_model.lambda =  -1;
+Params.grfnn_model.mu1 = 4;
+Params.grfnn_model.mu2 = -2.2;
+Params.grfnn_model.ceps = 1;
+Params.grfnn_model.kappa = 1; % Critical
+Params.grfnn_model.ampMult = 0.05;
+Params.grfnn_model.makeModel = 'makeRhythm2c3BD';
+
+Params.grfnn_model.mfLayer = [1:2];
 
 

@@ -5,7 +5,7 @@ function Stims = integratetargets(Stims, Params)
 for stimNo = 1:length(Stims.names)
     %Identify rhythmClass for stimulus
     rc = Stims.names{stimNo}(1:2);
-    rcNo = find(strcmp(Params.target.rcNames, rc));
+    rcNo = find(strcmp(Params.target.rcNames, rc))
     
     %create mixture for each tap/beat target in pattern
     for layerNo = Params.grfnn_model.mfLayer
@@ -17,13 +17,13 @@ for stimNo = 1:length(Stims.names)
                     targetDist = Params.target.rhythmClass{rcNo}.targetsDist{bNo, K};
                     %Mix distros
                     mixDist = (targetDist * m) + (priorDist * (1-m));
-                    Stims.(['mix_l' num2str(layerNo)]){stimNo, bNo, K, M} = mixDist;
+                    Stims.mix{stimNo, 
                 end
             end
         end
         
     end
-end
+    
     
     
 end

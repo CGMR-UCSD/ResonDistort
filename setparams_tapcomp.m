@@ -6,16 +6,17 @@ Params.stim.folder = 'C:\Users\mille\OneDrive\Documents\Research\Meter_Models\ta
 
 %% Mixture Model Parameters
 Params.mix.kappa = [1 2];
-Params.mix.mix = [0.5];
+Params.mix.mix = [0.25 0.5 0.75];
 
 %% Target Motor Pattern Settings
 %Must create a 'rhythmClass' for each patter of targets;
+Params.target.rcNames = {'23', '32'};
 %'SSL' rhythmClass
-Params.target.rhythmClass{1}.name = '23';
+Params.target.rhythmClass{1}.name = Params.target.rcNames{1};
 Params.target.rhythmClass{1}.targets = [0 0.5 1.0]; %Target taps in s
 
 %'LSS' rhythmClass
-Params.target.rhythmClass{2}.name = '32';
+Params.target.rhythmClass{2}.name = Params.target.rcNames{2};
 Params.target.rhythmClass{2}.targets = [0 0.75 1.25];
 
 
@@ -58,3 +59,5 @@ Params.grfnn_model.makeModel = 'makeRhythm2c3BD';
 Params.grfnn_model.mfLayer = [1:2];
 
 
+%% Simulation Settings
+Params.simNo = 30000; %Mean of VM is determined by simulation -- # of points to generate
